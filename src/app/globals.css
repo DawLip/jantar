@@ -1,0 +1,33 @@
+@import "tailwindcss";
+
+:root {
+  --BgcBlack: #141414;
+  --CardBgc: #2B2B2B;
+  --CardHeader: #242424;
+  --OnCardWhite: rgba(255, 255, 255, 0.70);
+  --OnCardGray: rgba(255, 255, 255, 0.20);
+
+  --RoundM: 16px;
+}
+
+@theme inline {
+  --color-BgcBlack: var(--BgcBlack);
+  --color-CardBgc: var(--CardBgc);
+  --color-CardHeader: var(--CardHeader);
+  --color-OnCardWhite: var(--OnCardWhite);
+  --color-OnCardGray: var(--OnCardGray);
+
+  --radius-RoundM: var(--RoundM);
+
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--BgcBlack);
+  color: var(--OnCardWhite);
+  font-family: var(--font-inter), sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
