@@ -11,6 +11,29 @@ import Button from "@/components/input/Button";
 export default function EtykietyPromocyjnePage() {
     const [openedTab, setOpenedTab] = React.useState(0);
 
+    React.useEffect(() => {
+        async function fetchPromotions() {
+            try {
+                const response = await fetch("/api/promotions");
+
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+
+                const data = await response.json();
+                console.log(data);
+            } catch (error) {
+                // setError(
+                //     error instanceof Error ? error.message : "Błąd pobierania"
+                // );
+            } finally {
+                // setLoading(false);
+            }
+        }
+
+        fetchPromotions();
+    }, []);
+
     return (
         <Card
             className="h-full w-full"
